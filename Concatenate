@@ -1,10 +1,10 @@
 CONCATENATE Two or More Data Frames in One
 
-versionA = pd.read_excel('C:/Users/email/Documents/Folders/NAAMA/2022/Kav MASHVE 2022/FINAL Sept 8 2022/kavMashveA.xlsx')
+versionA = pd.read_excel('C:/Users/fileA.xlsx')
 versionA
 versionA.shape
 
-versionB = pd.read_excel('C:/Users/email/Documents/Folders/NAAMA/2022/Kav MASHVE 2022/FINAL Sept 8 2022/kavMashveB.xlsx')
+versionB = pd.read_excel('C:/Users/fileB.xlsx')
 versionB
 versionB.shape
 
