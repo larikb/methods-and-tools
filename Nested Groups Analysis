@@ -1,0 +1,22 @@
+import pandas as pd
+import numpy as np
+
+myData = pd.read_excel('C:/dataFile.xlsx')
+myData
+myData.shape
+
+finance = myData.loc[myData['study'] == 'economy']
+humanResour = myData.loc[(myData['study'] == 'human resources') & (myData['study'] == 'psychology')]
+enginer = myData.loc[myData['study'] == 'engineer']
+science = myData.loc[myData['study'] == 'science']
+law = myData.loc[myData['study'] == 'law']
+
+highScore = myData.loc[myData['grade'] == 'aboveAverage']
+middleScore = myData.loc[(myData['grade'] == 'aroundAverage') & (myData['participPrograms'] == 'no')]
+lowScore = myData.loc[(myData['grade'] == 'belowAverage') & (myData['participPrograms'] == 'yes')]
+
+# Calculating Percentage:
+
+c = humanResour.groupby(['study','group'])['jobType'].value_counts(dropna=True)
+p = humanResour.groupby(['study','group'])['jobType'].value_counts(normalize=True).mul(100).round(0).astype(str) + '%'
+pd.concat([c,p], axis=1, keys=['counts', '%'])
