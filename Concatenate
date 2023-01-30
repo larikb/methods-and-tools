@@ -1,4 +1,10 @@
-CONCATENATE Two or More Data Frames in One
+import pandas as pd
+import numpy as np
+
+# CONCATENATE Two or More Data Frames in One
+
+big = pd.read_excel('C:/Users/big.xlsx')
+big.shape
 
 versionA = pd.read_excel('C:/Users/fileA.xlsx')
 versionA
@@ -13,5 +19,5 @@ frames = [big, versionA, versionB]
 result = pd.concat(frames)
 result.shape
 
-pd.DataFrame(result.groupby('group')['religion'].value_counts())
+pd.DataFrame(result.groupby('group')['class'].value_counts())
 
