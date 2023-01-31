@@ -1,0 +1,3 @@
+df.loc[df['var1'] == 5, 'var2']
+
+df.loc[df['score'] == 'high', 'schoolName'].value_counts()
