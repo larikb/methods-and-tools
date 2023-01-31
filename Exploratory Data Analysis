@@ -1,0 +1,30 @@
+df.tail()
+df.head()
+df.shape()
+df.info()
+
+df.isna().sum()   # summarizes missing values
+
+df.describe()   # shows count, mean, std, min, max, 25%, 50%, 75%
+
+
+# another way to see statistics:
+df.variable.count()
+df['variable'].count()
+df[['var1', 'var2', 'var3']].count()
+
+df.variable.mean()
+df['variable'].mean()
+df[['var1', 'var2', 'var3']].mean()
+
+df.variable.std()
+df['variable'].std()
+df[['var1', 'var2', 'var3']].std()
+
+
+# descriptive statistics by groups:
+df.groupby('gender')[['var1', 'var2', 'var3', 'var4', 'var5']].mean().round(1)
+
+df['variable'].unique().shape    #  unique items in the variable
+
+df.corr()    # Pearson Correlation
