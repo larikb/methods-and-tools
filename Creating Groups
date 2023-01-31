@@ -1,6 +1,6 @@
-group1 = data.loc[data['class'] == 'low']
-group2 = data.loc[(data['class'] == 'middle') & (data['gender'] == "women")]
-group3 = data.loc[(data['class'] == 'middle') & (data['gender'] == "men")]
+group1 = df.loc[df['class'] == 'low']
+group2 = df.loc[(df['class'] == 'middle') & (df['gender'] == "women")]
+group3 = df.loc[(df['class'] == 'middle') & (df['gender'] == "men")]
 
 
 # Creating "group":
@@ -15,6 +15,6 @@ def categorise (row):
     elif row['gender'] == 'women' and row['participPrograms'] == 'yes':
         return 'women IN program'
         
- data['group'] = data.apply(lambda row: categorise (row), axis=1)
+df['group'] = df.apply(lambda row: categorise (row), axis=1)
  
-data[['group', 'participPrograms', 'gender']].head(5) 
+df[['group', 'participPrograms', 'gender']].head(5) 
