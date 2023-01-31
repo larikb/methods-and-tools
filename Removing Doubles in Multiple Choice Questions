@@ -1,1 +1,15 @@
+#  Step 1:
+df2 = pd.DataFrame(df['howOrderedFood'].dropna().str.replace(';',',').str.split(',').apply(set).str.join(','))
+df2
+#   dropna() - removes missing values
+#   str.replace(';',',') - replaces ; with ,
+#   str.split(',') - splits by ,
+#   apply(set) - removes double values
+#   str.join(',') - joins again (without removed doubles)
 
+
+#  Step 2:
+pd.DataFrame(df2['howOrderedFood'].str.split(',').sum()).value_counts()
+#   split(',')
+#   sum()
+#   value_counts()
