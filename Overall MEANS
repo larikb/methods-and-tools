@@ -1,0 +1,2 @@
+df['average'] = df.loc[:,['var1', 'var2', 'var3', 'var4', 'var5']].mean(axis=1)
+df['average'].describe().round(1)
