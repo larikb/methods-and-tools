@@ -18,5 +18,5 @@ lowScore = myData.loc[(myData['grade'] == 'belowAverage') & (myData['participPro
 # Calculating Percentage:
 
 c = humanResour.groupby(['study','group'])['jobType'].value_counts(dropna=True)
-p = humanResour.groupby(['study','group'])['jobType'].value_counts(normalize=True).mul(100).round(0).astype(str) + '%'
+p = humanResour.groupby(['study','group'])['jobType'].value_counts(normalize=True).mul(100).round(1).astype(str) + '%'
 pd.concat([c,p], axis=1, keys=['counts', '%'])
