@@ -1,0 +1,19 @@
+len(df['variable'])   # lenght of original variable
+
+var1 = df['variable'].dropna()  # removes missing values
+len(var1)                       # length after removing missing values
+
+tokens = [item.split() for item in var1]
+words = [words for sentence in tokens for word in sentence]
+stop_words = ['in', 'on', 'the', 'and', 'of', 'to', 'that', 'he', 'shall', 'into', 'she', 'for']
+clean = [word for word in words if word not in stop_words]
+
+from collections import Counter
+
+Counter(clean).most_common(30)
+
+#  TEXT Summary
+import re
+from gensim.summarizaton import summariza
+pip install gensim
+print(summarize(str(df['variable']), ratio=0.2, split=False))
