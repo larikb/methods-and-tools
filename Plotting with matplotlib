@@ -1,0 +1,10 @@
+import matplotlib.pyplot as plt
+
+df['variable'].hist(bins=30)   # histogram
+plt.show()
+
+df.plot.scatter(x='var1', y='var2')   # scatter plot
+plt.show()
+
+df['variable'].value_counts().plot.bar()   # bar plot
+plt.show()
